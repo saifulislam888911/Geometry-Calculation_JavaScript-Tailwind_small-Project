@@ -8,8 +8,7 @@ Summary : Html5, Tailwind, JavaScript.
 Helped From : Programming Hero Online-Class, Self-Practice, Self-Study. 
 
 
-# Branch : 
-Main : For Version Update. 
+# Branch :  
 Development : For Updating new features. Always Upto Date. Clean Codes (Delete Comments & Notes).  
 
 

@@ -1,0 +1,20 @@
+# Milestone 5 - Interactive JavaScript (JavaScript In a Relation)
+_________________________________________________________________
+_________________________________________________________________
+
+
+
+
+
+5. Module   28 : DOM manipulation with Geometry Genius
+----------------------------------------------------------------
+
+	28-1 Module overview _ project setup
+	28-2 Get Triangle Base and Height from the card
+	28-3 calculate Triangle and Rectangle Area
+	28-4 Reusable function to reduce duplicate code
+	28-5 When to return from function and when not to return
+	28-6 Power of reusable code and deploy to Netlify
+	28-7 Three ways to validate input data
+	28-8 (advanced) (optional) Create Dynamic HTML
+	28-9 Create Github private repository and practice for assignment
