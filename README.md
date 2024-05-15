@@ -9,8 +9,7 @@ Helped From : Programming Hero Online-Class, Self-Practice, Self-Study.
 
 
 # Branch : 
-Main : For Version Update.  
-DevWithNotes : For Pushing working codes alongside with Comments & Notes. Always Upto Date. 
+ DevWithNotes : For Pushing working codes alongside with Comments & Notes. Always Upto Date. 
 
 
 # Programming Hero Online Course : 
