@@ -1,289 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Geometry Genius : Home</title>
+    <title>Geometry Genius</title>
+
+    <!-- .......... Logo : Window Tab .......... -->
+    <link rel="icon" type="image/x-icon" href="./images/shapes-solid.svg" />
 
     <!-- .......... JavaScript Files : Online Link .......... -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1 class="text-5xl text-center mt-6 mb-16">
-            Let's
-            <span class="font-semibold text-violet-600">
-                Calculate
-            </span>
-            !
-        </h1>
+      <h1 class="text-5xl text-center mt-6 mb-16">
+        Let's
+        <span class="font-semibold text-violet-600"> Calculate </span>
+        !
+      </h1>
     </header>
 
-
-
     <main>
-        <!-- Main Container -->
-        <section class="flex flex-col lg:flex-row">
-            <!-- Division No.1 : Shape Container and Calculation -->
-            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4">
-                <!-- Card No.1 : Triangle -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/triangle.png" alt="Triangle" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Triangle</h2>
+      <!-- Main Container -->
+      <section class="flex flex-col lg:flex-row">
+        <!-- Division No.1 : Shape Container and Calculation -->
+        <div
+          class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4"
+        >
+          <!-- Card No.1 : Triangle -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/triangle.png" alt="Triangle" />
+            </figure>
 
-                      <p class="text-gray-400 mt-2">Calculate Area of a Triangle : </p>
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Triangle</h2>
 
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = 0.5 * base (<span id="formula-triangle-base">b</span>) * height (<span id="formula-triangle-height">h</span>)
-                      </h4>
+              <p class="text-gray-400 mt-2">Calculate Area of a Triangle :</p>
 
-                      <p class="mt-4">
-                        <input type="number" name="" id="triangle-base" class="text-xl bg-gray-200 border rounded-lg w-24 p-2" placeholder="base">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="number" name="" id="triangle-height" class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2" placeholder="height">
-                        <span class="ml-2">cm</span>
-                      </p>
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = 0.5 * base (<span id="formula-triangle-base">b</span
+                >) * height (<span id="formula-triangle-height">h</span>)
+              </h4>
 
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="triangle-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
+              <p class="mt-4">
+                <input
+                  type="number"
+                  name=""
+                  id="triangle-base"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 p-2"
+                  placeholder="base"
+                />
+                <span class="m-2">cm</span>
 
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculateTriangleArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
+                <input
+                  type="number"
+                  name=""
+                  id="triangle-height"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2"
+                  placeholder="height"
+                />
+                <span class="ml-2">cm</span>
+              </p>
 
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="triangle-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
 
-
-                <!-- Card No.2 : Rectangle -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/rectangle.png" alt="Rectangle" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Rectangle</h2>
-
-                      <p class="text-gray-400 mt-2">Calculate Area of a Rectangle : </p>
-
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = width (<span id="formula-rectangle-width">w</span>) * length (<span id="formula-rectangle-length">l</span>)
-                      </h4>
-
-                      <p class="mt-4">
-                        <input type="text" name="" id="rectangle-width" class="text-xl bg-gray-200 border rounded-lg w-24 p-2" placeholder="width">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="text" name="" id="rectangle-length" class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2" placeholder="length">
-                        <span class="ml-2">cm</span>
-                      </p>
-
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="rectangle-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
-
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculateRectangleArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Card No.3 : Parallelogram -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/parallelogram.png" alt="Parallelogram" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Parallelogram</h2>
-
-                      <p class="text-gray-400 mt-2">Calculate Area of a Parallelogram : </p>
-
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = base (<span id="formula-parallelogram-base">b</span>) * height (<span id="formula-parallelogram-height">h</span>)
-                      </h4>
-
-                      <p class="mt-4">
-                        <input type="text" name="" id="parallelogram-base" class="text-xl bg-gray-200 border rounded-lg w-24 p-2" placeholder="base">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="text" name="" id="parallelogram-height" class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2" placeholder="height">
-                        <span class="ml-2">cm</span>
-                      </p>
-
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="parallelogram-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
-
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculateParallelogramArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Card No.4 : Rhombus -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/rhombus.png" alt="Rhombus" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Rhombus</h2>
-
-                      <p class="text-gray-400 mt-2">Calculate Area of a Rhombus : </p>
-
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = 0.5 * diagonal-1 (<span id="formula-rhombus-diagonal-1">d1</span>) * diagonal-2 (<span id="formula-rhombus-diagonal-2">d2</span>)
-                      </h4>
-
-                      <p class="mt-4">
-                        <input type="text" name="" id="rhombus-diagonal-1" class="text-xl bg-gray-200 border rounded-lg w-28 p-2" placeholder="diagonal-1">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="text" name="" id="rhombus-diagonal-2" class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2" placeholder="diagonal-2">
-                        <span class="ml-2">cm</span>
-                      </p>
-
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="rhombus-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
-
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculateRhombusArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Card No.5 : Pentagon -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/pentagon.png" alt="Pentagon" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Pentagon</h2>
-
-                      <p class="text-gray-400 mt-2">Calculate Area of a Pentagon : </p>
-
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = 0.5 *  perimeter (<span id="formula-pentagon-perimeter">p</span>) * apothem (<span id="formula-pentagon-apothem">a</span>)
-                      </h4>
-
-                      <p class="mt-4">
-                        <input type="text" name="" id="pentagon-perimeter" class="text-xl bg-gray-200 border rounded-lg w-28 p-2" placeholder="perimeter">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="text" name="" id="pentagon-apothem" class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2" placeholder="apothem">
-                        <span class="ml-2">cm</span>
-                      </p>
-
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="pentagon-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
-
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculatePentagonArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
-                
-                
-
-                <!-- Card No.6 : Ellipse -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure>
-                        <img src="./images/ellipse.png" alt="Ellipse" />
-                    </figure>
-                    
-                    <div class="card-body">
-                      <h2 class="card-title font-extrabold">Ellipse</h2>
-
-                      <p class="text-gray-400 mt-2">Calculate Area of a Ellipse : </p>
-
-                      <h4 class="font-serif text-indigo-400 mt-2">
-                        Area (A) = π (pi) * semi-Major-Axis (<span id="formula-ellipse-semiMajorAxis-a">a</span>) * semi-Minor-Axis (<span id="formula-ellipse-semiMinorAxis-b">b</span>)
-                      </h4>
-
-                      <p class="mt-4">
-                        <input type="text" name="" id="ellipse-semiMajorAxis-a" class="text-xl bg-gray-200 border rounded-lg w-28 p-2" placeholder="Semi-Major-Axis-a" title="Enter the length of Semi-Major-Axis-a">
-                        <span class="m-2">cm</span>
-                      
-                        <input type="text" name="" id="ellipse-semiMinorAxis-b" class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2" placeholder="Semi-Minor-Axis-b" title="Enter the length of Semi-Minor-Axis-b">
-                        <span class="ml-2">cm</span>
-                      </p>
-
-                      <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
-                        Result : 
-                        <span id="ellipse-area" class="text-xl text-green-500">
-                            0.00
-                        </span>
-                        cm<sup>2</sup>
-                      </p>
-
-                      <div  class="card-actions mt-4">
-                        <button onclick="calculateEllipseArea()" class="btn btn-primary w-full">Calculate</button>
-                      </div>
-                    </div>
-                </div>
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculateTriangleArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
             </div>
+          </div>
 
+          <!-- Card No.2 : Rectangle -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/rectangle.png" alt="Rectangle" />
+            </figure>
 
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Rectangle</h2>
 
-            <!-- Division No.2 : Area Calculator EntryList -->
-            <div class="w-[400px]">
-                <!-- Card : Area Calculator -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <h2 class="card-title font-extrabold text-3xl">Area Calculator :</h2>
+              <p class="text-gray-400 mt-2">Calculate Area of a Rectangle :</p>
 
-                        <div id="calculation-entry">
-                        </div>
-                    </div>
-                </div>
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = width (<span id="formula-rectangle-width">w</span>) *
+                length (<span id="formula-rectangle-length">l</span>)
+              </h4>
+
+              <p class="mt-4">
+                <input
+                  type="text"
+                  name=""
+                  id="rectangle-width"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 p-2"
+                  placeholder="width"
+                />
+                <span class="m-2">cm</span>
+
+                <input
+                  type="text"
+                  name=""
+                  id="rectangle-length"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2"
+                  placeholder="length"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="rectangle-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
+
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculateRectangleArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <!-- Card No.3 : Parallelogram -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/parallelogram.png" alt="Parallelogram" />
+            </figure>
+
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Parallelogram</h2>
+
+              <p class="text-gray-400 mt-2">
+                Calculate Area of a Parallelogram :
+              </p>
+
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = base (<span id="formula-parallelogram-base">b</span>)
+                * height (<span id="formula-parallelogram-height">h</span>)
+              </h4>
+
+              <p class="mt-4">
+                <input
+                  type="text"
+                  name=""
+                  id="parallelogram-base"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 p-2"
+                  placeholder="base"
+                />
+                <span class="m-2">cm</span>
+
+                <input
+                  type="text"
+                  name=""
+                  id="parallelogram-height"
+                  class="text-xl bg-gray-200 border rounded-lg w-24 ml-4 p-2"
+                  placeholder="height"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="parallelogram-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
+
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculateParallelogramArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card No.4 : Rhombus -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/rhombus.png" alt="Rhombus" />
+            </figure>
+
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Rhombus</h2>
+
+              <p class="text-gray-400 mt-2">Calculate Area of a Rhombus :</p>
+
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = 0.5 * diagonal-1 (<span
+                  id="formula-rhombus-diagonal-1"
+                  >d1</span
+                >) * diagonal-2 (<span id="formula-rhombus-diagonal-2">d2</span
+                >)
+              </h4>
+
+              <p class="mt-4">
+                <input
+                  type="text"
+                  name=""
+                  id="rhombus-diagonal-1"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 p-2"
+                  placeholder="diagonal-1"
+                />
+                <span class="m-2">cm</span>
+
+                <input
+                  type="text"
+                  name=""
+                  id="rhombus-diagonal-2"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2"
+                  placeholder="diagonal-2"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="rhombus-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
+
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculateRhombusArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card No.5 : Pentagon -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/pentagon.png" alt="Pentagon" />
+            </figure>
+
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Pentagon</h2>
+
+              <p class="text-gray-400 mt-2">Calculate Area of a Pentagon :</p>
+
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = 0.5 * perimeter (<span
+                  id="formula-pentagon-perimeter"
+                  >p</span
+                >) * apothem (<span id="formula-pentagon-apothem">a</span>)
+              </h4>
+
+              <p class="mt-4">
+                <input
+                  type="text"
+                  name=""
+                  id="pentagon-perimeter"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 p-2"
+                  placeholder="perimeter"
+                />
+                <span class="m-2">cm</span>
+
+                <input
+                  type="text"
+                  name=""
+                  id="pentagon-apothem"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2"
+                  placeholder="apothem"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="pentagon-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
+
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculatePentagonArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card No.6 : Ellipse -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/ellipse.png" alt="Ellipse" />
+            </figure>
+
+            <div class="card-body">
+              <h2 class="card-title font-extrabold">Ellipse</h2>
+
+              <p class="text-gray-400 mt-2">Calculate Area of a Ellipse :</p>
+
+              <h4 class="font-serif text-indigo-400 mt-2">
+                Area (A) = π (pi) * semi-Major-Axis (<span
+                  id="formula-ellipse-semiMajorAxis-a"
+                  >a</span
+                >) * semi-Minor-Axis (<span id="formula-ellipse-semiMinorAxis-b"
+                  >b</span
+                >)
+              </h4>
+
+              <p class="mt-4">
+                <input
+                  type="text"
+                  name=""
+                  id="ellipse-semiMajorAxis-a"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 p-2"
+                  placeholder="Semi-Major-Axis-a"
+                  title="Enter the length of Semi-Major-Axis-a"
+                />
+                <span class="m-2">cm</span>
+
+                <input
+                  type="text"
+                  name=""
+                  id="ellipse-semiMinorAxis-b"
+                  class="text-xl bg-gray-200 border rounded-lg w-28 ml-3 p-2"
+                  placeholder="Semi-Minor-Axis-b"
+                  title="Enter the length of Semi-Minor-Axis-b"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+
+              <p class="text-gray-400 bg-green-50 rounded-lg w-full mt-4 p-2">
+                Result :
+                <span id="ellipse-area" class="text-xl text-green-500">
+                  0.00
+                </span>
+                cm<sup>2</sup>
+              </p>
+
+              <div class="card-actions mt-4">
+                <button
+                  onclick="calculateEllipseArea()"
+                  class="btn btn-primary w-full"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Division No.2 : Area Calculator EntryList -->
+        <div class="w-[400px]">
+          <!-- Card : Area Calculator -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title font-extrabold text-3xl">
+                Area Calculator :
+              </h2>
+
+              <div id="calculation-entry"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-
-    
     <!-- .......... JavaScript Files : Programming Hero .......... -->
     <script src="./script/area-calculator.js"></script>
 
     <!-- .......... JavaScript Files : Mine .......... -->
-</body>
+  </body>
 </html>

@@ -1,272 +1,242 @@
-console.log('Js File : area-calculator_Mine.js');
-
-
+console.log("Js File : area-calculator_Mine.js");
 
 /* <!-- .......... 
     Card No.1 : Triangle
 .......... --> */
-function calculateTriangleArea(){
-    //console.log('Button Clicked : Calculate (Triangle)');
+function calculateTriangleArea() {
+  const inputField_TriangleBase = document.getElementById("triangle-base");
+  const triangleBaseValue = parseFloat(inputField_TriangleBase.value);
+  inputField_TriangleBase.value = "";
 
-    const inputField_TriangleBase = document.getElementById('triangle-base');
-    const triangleBaseValue = parseFloat(inputField_TriangleBase.value);
-    inputField_TriangleBase.value = '';
+  const inputField_TriangleHeight = document.getElementById("triangle-height");
+  const triangleHeightValue = parseFloat(inputField_TriangleHeight.value);
+  inputField_TriangleHeight.value = "";
 
-    const inputField_TriangleHeight = document.getElementById('triangle-height');
-    const triangleHeightValue = parseFloat(inputField_TriangleHeight.value);
-    inputField_TriangleHeight.value = '';
+  /* <!-- .......... Validate Input : base and height .......... --> */
+  if (isNaN(triangleBaseValue) || isNaN(triangleHeightValue)) {
+    alert("Enter a Valid Number.");
 
-    /* <!-- .......... Validate Input : base and height .......... --> */
-    if((isNaN(triangleBaseValue)) || (isNaN(triangleHeightValue)))
-        {
-            //console.log('Invalid Number.');
-        
-            alert('Enter a Valid Number.');
-    
-            return;
-        }
+    return;
+  }
 
-    const textElement_TriangleBase= document.getElementById('formula-triangle-base');
-    textElement_TriangleBase.innerText = triangleBaseValue;
-    const textElement_TriangleHeight= document.getElementById('formula-triangle-height');
-    textElement_TriangleHeight.innerText = triangleHeightValue;
+  const textElement_TriangleBase = document.getElementById(
+    "formula-triangle-base"
+  );
+  textElement_TriangleBase.innerText = triangleBaseValue;
+  const textElement_TriangleHeight = document.getElementById(
+    "formula-triangle-height"
+  );
+  textElement_TriangleHeight.innerText = triangleHeightValue;
 
-    const areaCalculation_Triangle = 0.5 * triangleBaseValue * triangleHeightValue ;
+  const areaCalculation_Triangle =
+    0.5 * triangleBaseValue * triangleHeightValue;
 
-    const triangleArea = document.getElementById('triangle-area');
-    triangleArea.innerText = areaCalculation_Triangle;
+  const triangleArea = document.getElementById("triangle-area");
+  triangleArea.innerText = areaCalculation_Triangle;
 
-    //console.log(triangleBaseValue, triangleHeightValue, areaCalculation_Triangle);
-
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Triangle', areaCalculation_Triangle);
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Triangle", areaCalculation_Triangle);
 }
-
-
 
 /* <!-- .......... 
     Card No.2 : Rectangle
 .......... --> */
-function calculateRectangleArea(){
-    //console.log('Button Clicked : Calculate (Rectangle)');
+function calculateRectangleArea() {
+  const inputField_RectangleWidth = document.getElementById("rectangle-width");
+  const rectangleWidthValue = parseFloat(inputField_RectangleWidth.value);
+  inputField_RectangleWidth.value = "";
 
-    const inputField_RectangleWidth = document.getElementById('rectangle-width');
-    const rectangleWidthValue = parseFloat(inputField_RectangleWidth.value);
-    inputField_RectangleWidth.value = '';
+  const inputField_RectangleLength =
+    document.getElementById("rectangle-length");
+  const rectangleLengthValue = parseFloat(inputField_RectangleLength.value);
+  inputField_RectangleLength.value = "";
 
-    const inputField_RectangleLength = document.getElementById('rectangle-length');
-    const rectangleLengthValue = parseFloat(inputField_RectangleLength.value);
-    inputField_RectangleLength.value = '';
+  /* <!-- .......... Validate Input : width and length .......... --> */
+  if (isNaN(rectangleWidthValue) || isNaN(rectangleLengthValue)) {
+    alert("Enter a Valid Number.");
 
-    /* <!-- .......... Validate Input : width and length .......... --> */
-    if((isNaN(rectangleWidthValue)) || (isNaN(rectangleLengthValue)))
-    {
-        //console.log('Invalid Number.');
+    return;
+  }
 
-        alert('Enter a Valid Number.');
+  const textElement_RectangleWidth = document.getElementById(
+    "formula-rectangle-width"
+  );
+  textElement_RectangleWidth.innerText = rectangleWidthValue;
+  const textElement_RectangleLength = document.getElementById(
+    "formula-rectangle-length"
+  );
+  textElement_RectangleLength.innerText = rectangleLengthValue;
 
-        return;
-    }
+  const areaCalculation_Rectangle = rectangleWidthValue * rectangleLengthValue;
 
-    const textElement_RectangleWidth= document.getElementById('formula-rectangle-width');
-    textElement_RectangleWidth.innerText = rectangleWidthValue;
-    const textElement_RectangleLength= document.getElementById('formula-rectangle-length');
-    textElement_RectangleLength.innerText = rectangleLengthValue;
+  const rectangleArea = document.getElementById("rectangle-area");
+  rectangleArea.innerText = areaCalculation_Rectangle;
 
-    const areaCalculation_Rectangle = rectangleWidthValue * rectangleLengthValue ;
-
-    const rectangleArea = document.getElementById('rectangle-area');
-    rectangleArea.innerText = areaCalculation_Rectangle;
-
-    //console.log(rectangleWidthValue, rectangleLengthValue, areaCalculation_Rectangle);    
-
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Rectangle', areaCalculation_Rectangle);
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Rectangle", areaCalculation_Rectangle);
 }
-
-
 
 /* <!-- .......... 
     Card No.3 : Parallelogram
 .......... --> */
-function calculateParallelogramArea(){
-    //console.log('Button Clicked : Calculate (Parallelogram)');
+function calculateParallelogramArea() {
+  const parallelogramBase = getInputFieldValueById("parallelogram-base");
+  const parallelogramHeight = getInputFieldValueById("parallelogram-height");
 
-    const parallelogramBase = getInputFieldValueById('parallelogram-base');
-    const parallelogramHeight = getInputFieldValueById('parallelogram-height');
+  /* <!-- .......... Validate Input : base and height .......... --> */
+  if (isNaN(parallelogramBase) || isNaN(parallelogramHeight)) {
+    alert("Enter a Valid Number.");
 
-    /* <!-- .......... Validate Input : base and height .......... --> */
-    if((isNaN(parallelogramBase)) || (isNaN(parallelogramHeight)))
-        {
-            //console.log('Invalid Number.');
-        
-            alert('Enter a Valid Number.');
-    
-            return;
-        }
+    return;
+  }
 
-    const area_Parallelogram = parallelogramBase * parallelogramHeight;
-    setTextElementValueById('parallelogram-area', area_Parallelogram);
+  const area_Parallelogram = parallelogramBase * parallelogramHeight;
+  setTextElementValueById("parallelogram-area", area_Parallelogram);
 
-    setTextElementValueById('formula-parallelogram-base', parallelogramBase);
-    setTextElementValueById('formula-parallelogram-height', parallelogramHeight);
+  setTextElementValueById("formula-parallelogram-base", parallelogramBase);
+  setTextElementValueById("formula-parallelogram-height", parallelogramHeight);
 
-    //console.log(parallelogramBase, parallelogramHeight, area_Parallelogram);
-    
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Parallelogram', area_Parallelogram);
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Parallelogram", area_Parallelogram);
 }
-
-
 
 /* <!-- .......... 
     Card No.4 : Rhombus
 .......... --> */
-function calculateRhombusArea(){
-    //console.log('Button Clicked : Calculate (Rhombus)');
+function calculateRhombusArea() {
+  const rhombusDiagonal_1 = getInputFieldValueById("rhombus-diagonal-1");
+  const rhombusDiagonal_2 = getInputFieldValueById("rhombus-diagonal-2");
 
-    const rhombusDiagonal_1 = getInputFieldValueById('rhombus-diagonal-1');
-    const rhombusDiagonal_2 = getInputFieldValueById('rhombus-diagonal-2');
-    
-    /* <!-- .......... Validate Input : Diagonal_1 and Diagonal_2 .......... --> */
-    if((isNaN(rhombusDiagonal_1)) || (isNaN(rhombusDiagonal_2)))
-        {
-            //console.log('Invalid Number.');
-       
-            alert('Enter a Valid Number.');
-    
-            return;
-        }
+  /* <!-- .......... Validate Input : Diagonal_1 and Diagonal_2 .......... --> */
+  if (isNaN(rhombusDiagonal_1) || isNaN(rhombusDiagonal_2)) {
+    alert("Enter a Valid Number.");
 
-    const area_Rhombus = 0.5 * rhombusDiagonal_1 * rhombusDiagonal_2;
-    setTextElementValueById('rhombus-area', area_Rhombus);
+    return;
+  }
 
-    setTextElementValueById('formula-rhombus-diagonal-1', rhombusDiagonal_1);
-    setTextElementValueById('formula-rhombus-diagonal-1', rhombusDiagonal_2);
+  const area_Rhombus = 0.5 * rhombusDiagonal_1 * rhombusDiagonal_2;
+  setTextElementValueById("rhombus-area", area_Rhombus);
 
-    //console.log(rhombusDiagonal_1, rhombusDiagonal_2, area_Rhombus);
- 
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Rhombus', area_Rhombus);
+  setTextElementValueById("formula-rhombus-diagonal-1", rhombusDiagonal_1);
+  setTextElementValueById("formula-rhombus-diagonal-1", rhombusDiagonal_2);
+
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Rhombus", area_Rhombus);
 }
-
-
 
 /* <!-- .......... 
     Card No.5 : Pentagon
 .......... --> */
-function calculatePentagonArea(){
-    //console.log('Button Clicked : Calculate (Pentagon)');
+function calculatePentagonArea() {
+  const pentagonPerimeter = getInputFieldValueById("pentagon-perimeter");
+  const pentagonApothem = getInputFieldValueById("pentagon-apothem");
 
-    const pentagonPerimeter = getInputFieldValueById('pentagon-perimeter');
-    const pentagonApothem = getInputFieldValueById('pentagon-apothem');
-    
-    /* <!-- .......... Validate Input : Perimeter and Apothem .......... --> */
-    if((isNaN(pentagonPerimeter)) || (isNaN(pentagonApothem)))
-        {
-            //console.log('Invalid Number.');
-        
-            alert('Enter a Valid Number.');
-    
-            return;
-        }
+  /* <!-- .......... Validate Input : Perimeter and Apothem .......... --> */
+  if (isNaN(pentagonPerimeter) || isNaN(pentagonApothem)) {
+    alert("Enter a Valid Number.");
 
-    const area_Pentagon = 0.5 * pentagonPerimeter * pentagonApothem;
-    setTextElementValueById('pentagon-area', area_Pentagon);
+    return;
+  }
 
-    setTextElementValueById('formula-pentagon-perimeter', pentagonPerimeter);
-    setTextElementValueById('formula-pentagon-apothem', pentagonApothem);
+  const area_Pentagon = 0.5 * pentagonPerimeter * pentagonApothem;
+  setTextElementValueById("pentagon-area", area_Pentagon);
 
-    //console.log(pentagonPerimeter, pentagonApothem, area_Pentagon);
-    
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Pentagon', area_Pentagon);
+  setTextElementValueById("formula-pentagon-perimeter", pentagonPerimeter);
+  setTextElementValueById("formula-pentagon-apothem", pentagonApothem);
+
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Pentagon", area_Pentagon);
 }
-
-
 
 /* <!-- .......... 
     Card No.6 : Ellipse
 .......... --> */
-function calculateEllipseArea(){
-    //console.log('Button Clicked : Calculate (Ellipse)');
+function calculateEllipseArea() {
+  const ellipseSemiMajorAxis_a = getInputFieldValueById(
+    "ellipse-semiMajorAxis-a"
+  );
+  const ellipseSemiMinorAxis_b = getInputFieldValueById(
+    "ellipse-semiMinorAxis-b"
+  );
 
-    const ellipseSemiMajorAxis_a = getInputFieldValueById('ellipse-semiMajorAxis-a');
-    const ellipseSemiMinorAxis_b = getInputFieldValueById('ellipse-semiMinorAxis-b');
-    
-    /* <!-- .......... Validate Input : Semi-Major-Axis-a and Semi-Minor-Axis-b .......... --> */
-    if((isNaN(ellipseSemiMajorAxis_a)) || (isNaN(ellipseSemiMinorAxis_b)))
-        {
-            //console.log('Invalid Number.');
-        
-            alert('Enter a Valid Number.');
-    
-            return;
-        }
+  /* <!-- .......... Validate Input : Semi-Major-Axis-a and Semi-Minor-Axis-b .......... --> */
+  if (isNaN(ellipseSemiMajorAxis_a) || isNaN(ellipseSemiMinorAxis_b)) {
+    alert("Enter a Valid Number.");
 
-    const area_Ellipse = (3.1416 * ellipseSemiMajorAxis_a * ellipseSemiMinorAxis_b).toFixed(1);
-    setTextElementValueById('ellipse-area', area_Ellipse);
+    return;
+  }
 
-    setTextElementValueById('formula-ellipse-semiMajorAxis-a', ellipseSemiMajorAxis_a);
-    setTextElementValueById('formula-ellipse-semiMinorAxis-b', ellipseSemiMinorAxis_b);
+  const area_Ellipse = (
+    3.1416 *
+    ellipseSemiMajorAxis_a *
+    ellipseSemiMinorAxis_b
+  ).toFixed(1);
+  setTextElementValueById("ellipse-area", area_Ellipse);
 
-    //console.log(ellipseSemiMajorAxis_a, ellipseSemiMinorAxis_b, area_Ellipse);
-    
-    /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-    addToCalculationEntry('Ellipse', area_Ellipse);
+  setTextElementValueById(
+    "formula-ellipse-semiMajorAxis-a",
+    ellipseSemiMajorAxis_a
+  );
+  setTextElementValueById(
+    "formula-ellipse-semiMinorAxis-b",
+    ellipseSemiMinorAxis_b
+  );
+
+  /* <!-- .......... Function : Add to Calculation Entry .......... --> */
+  addToCalculationEntry("Ellipse", area_Ellipse);
 }
 
+function getInputFieldValueById(inputFieldId) {
+  const inputField = document.getElementById(inputFieldId);
+  const inputFieldValue = parseFloat(inputField.value);
 
+  inputField.value = "";
 
-
-
-function getInputFieldValueById(inputFieldId){
-    const inputField = document.getElementById(inputFieldId);
-    const inputFieldValue = parseFloat(inputField.value);
-
-    inputField.value = '';
-
-    return inputFieldValue;
+  return inputFieldValue;
 }
 
+function getTextElementValueById(textElementId) {
+  const textElement = document.getElementById(textElementId);
+  const textElementValue = parseFloat(textElement.innerText);
 
-
-function getTextElementValueById(textElementId){
-    const textElement = document.getElementById(textElementId);
-    const textElementValue = parseFloat(textElement.innerText);
-
-    return textElementValue;
+  return textElementValue;
 }
 
+function setTextElementValueById(textElementId, newValue) {
+  const textElement = document.getElementById(textElementId);
 
-
-function setTextElementValueById(textElementId, newValue){
-    const textElement = document.getElementById(textElementId);
-    
-    textElement.innerText = newValue;
+  textElement.innerText = newValue;
 }
-
-
-
-
 
 /* <!-- .......... Function : Add to Calculation Entry .......... --> */
-function addToCalculationEntry(areaType, area)
-{
-    //console.log('Adding To Calculation Entry.');
+function addToCalculationEntry(areaType, area) {
+  const calculationEntry = document.getElementById("calculation-entry");
+  const countEntry = calculationEntry.childElementCount;
+  const uniqId = countEntry + 1;
 
-    const calculationEntry = document.getElementById('calculation-entry');
-    const countEntry = calculationEntry.childElementCount;
-
-    const entryData = document.createElement('p');
-    entryData.classList.add('my-4');
-    /* <!-- .......... Creating Html using Dynamic Template String .......... --> */
-    entryData.innerHTML = `${countEntry + 1}. ${areaType} ${area} cm<sup>2</sup> 
-                            <button class="btn btn-sm btn-primary">
+  const entryData = document.createElement("p");
+  entryData.classList.add("my-4");
+  entryData.setAttribute("id", "dataId_" + uniqId);
+  /* <!-- .......... Creating Html using Dynamic Template String .......... --> */
+  entryData.innerHTML = `
+                            ${countEntry + 1}. ${areaType}
+                            <span id="areaValue_${uniqId}">${area}</span>
+                            <span id="unitName_${uniqId}">cm</span><sup>2</sup> 
+                            <button onclick="meter_converter('areaValue_${uniqId}', 'unitName_${uniqId}')" class="btn btn-sm text-white bg-violet-400">
                                 Convert to m<sup>2</sup>
-                            </button>`;    
+                            </button>
+                        `;
 
-    calculationEntry.appendChild(entryData);
+  calculationEntry.appendChild(entryData);
+}
 
-    //console.log(areaType + ' ' + area);
+/* ..........
+    Function : Calculation : Conversion : Cm to M
+.......... */
+function meter_converter(areaValue, unitName) {
+  const area_Value = getTextElementValueById(areaValue);
+  const meter_converted_value = area_Value / 100;
+  setTextElementValueById(areaValue, meter_converted_value);
+
+  setTextElementValueById(unitName, "m");
 }
